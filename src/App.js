@@ -1,13 +1,15 @@
 import './App.css';
 import {useState} from 'react'
 import { useEffect } from 'react';
+import Todo from './komponenta/Todo';
 
 
 
 
 
 function App() {
-  const [data,setData] = useState(0)
+  const [data,setData] = useState([]);
+  const [inputText,setInputText]=useState("");
 
   
   useEffect(()=>{
@@ -28,27 +30,33 @@ function App() {
       });
 
   },[])
- 
-  function strikethrough(e){
-    e.target.style.textDecoration = "line-through";
-  }
+  
+  const inputTextHandler = (e)=>{
+    setInputText(e.target.value);   
+    }
+    const submitTodoHandler=(e)=>{
+        e.preventDefault();
+        setData([...data, {title: inputText,status: "pending", id: Math.random()*10000}])
+        setInputText("");
+    }
 
- 
   return (
     <div className="App">
     <h1>My To Do List</h1>
     <label>
-      <input className='input' type="text" placeholder='Enter here'></input>
-      <button>New</button>
+      <input onChange={inputTextHandler} className='input' type="text" placeholder='Enter here'></input>
+      <button onClick={submitTodoHandler}>New</button>
     </label>
 
 
     
       <ul style={{listStyleType:"none"}}>
-        {data != 0 &&
-          data.map((el) => {
-            return <li onClick={strikethrough}>{el.title}</li>;
-          })}
+      {data.map(todo=>  
+          (<Todo key={data.id} 
+            data={data} 
+            todo={todo}
+            setData={setData}/>)
+          )}
       </ul>
     </div>
   );
