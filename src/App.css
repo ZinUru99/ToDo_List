@@ -13,6 +13,48 @@
   }
 }
 
+body{
+  background-image: linear-gradient(120deg, #548ee4 0%, #e585fd 100%);
+  color: #2b0660;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+}
+
+li{
+  color: #282c34;
+
+}
+
+label{
+  position: relative;
+}
+
+input[type="text"]{
+  border: none;
+  width: 400px;
+  height: 40px;
+  padding: 0 15px;
+}
+
+button{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #8c49ea;
+  color: white;
+  padding: 0 5px;
+  padding-top: 0;
+  letter-spacing: 1.2px;
+  border: none;
+  cursor: pointer;
+  
+}
+
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
