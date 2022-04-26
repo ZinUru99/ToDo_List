@@ -16,43 +16,59 @@
 body{
   background-image: linear-gradient(120deg, #548ee4 0%, #e585fd 100%);
   color: #2b0660;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-
+padding-bottom: 40px;
 }
 
 li{
   color: #282c34;
 
 }
-
-label{
-  position: relative;
+ul{
+  margin: 0 auto;
+  padding: 0;
+  
 }
 
-input[type="text"]{
+
+
+
+
+.new-wrap{
+display: flex;
+justify-content: center;
+margin-bottom: 50px;
+}
+
+.new-input {
   border: none;
   width: 400px;
   height: 40px;
   padding: 0 15px;
 }
-
-button{
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
+.logo img{
+  height: 150px;
+  margin: 50px auto;
+  margin-top: 60px;
+}
+.new-btn{
   background: #8c49ea;
   color: white;
-  padding: 0 5px;
-  padding-top: 0;
-  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.8px;
   border: none;
   cursor: pointer;
-  
+  height: 40px;
+  width: 80px;
+  padding: 0;
+  text-align: center;
 }
 
+.new-btn:hover{
+font-size: 14px;
+}
 
 
 .App-header {
